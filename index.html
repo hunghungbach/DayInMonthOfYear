@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web toán học</title>
+    <script>
+        function getDaysInMonth() {
+            let month = parseInt(document.getElementById("month").value);
+            let year = parseInt(document.getElementById("year").value);
+            let days = 0;
+
+            if (month < 1 || month > 12) {
+                days = "Tháng không hợp lệ!";
+            } else {
+                days = new Date(year, month, 0).getDate();
+            }
+
+            document.getElementById("daysResult").innerHTML = "Số ngày: " + days;
+        }
+    </script>
+</head>
+<body>
+    <h2>Tính số ngày của một tháng</h2>
+    <label for="month">Tháng:</label>
+    <input type="number" id="month" min="1" max="12"><br><br>
+
+    <label for="year">Năm:</label>
+    <input type="number" id="year"><br><br>
+
+    <button onclick="getDaysInMonth()">Tính số ngày</button>
+    <p id="daysResult"></p>
+</body>
+</html>
